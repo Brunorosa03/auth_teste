@@ -20,6 +20,9 @@ npm i jsonwebtoken
 <!-- Drive do sb  -->
 npm i mongoose 
 
+<!-- para acessar api externa  -->
+npm i axios 
+
 <!-- Para execcutar o servidor local,  dev dependence pq não usa em prod somente em desenvolvimento-->
 npm i --save-dev nodemon 
 
