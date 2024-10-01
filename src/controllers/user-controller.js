@@ -54,6 +54,7 @@ export const signup = async (req, res) => {
     const user = await User.create({
       email: req.body.email,
       password: req.body.password,
+      tipo: req.body.tipo,
     });
 
     const token = jwtService.generateAccessToken({

@@ -15,7 +15,7 @@ npm i express
 
 <!-- Utilizado para manipular o token  
 jmw JSON Web Token -->
-npm i jsonwebtoken 
+npm i jsonwebtoken S
 
 <!-- Drive do sb  -->
 npm i mongoose 

@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 const userSchema = new db.Schema({
   nome: {
     type: String,
-    required: true,
+    required: false,
   },
   email: {
     type: String,
@@ -24,15 +24,11 @@ const userSchema = new db.Schema({
   },
 });
 
-// não precisa do next nas versões mais novas do mongoose
 userSchema.pre("save", async function () {
-  // if (this.password !== this.confirmar_password) {} // Da pra deixar essa validação só no front
 
-  // Monta o hash criptografado
   this.password = await bcrypt.hash(this.password, 10);
 });
 
-// Define um método para a classe
 userSchema.methods.senhaCorreta = async function (senha) {
   return await bcrypt.compare(senha, this.password);
 };
