@@ -24,11 +24,21 @@ const userSchema = new db.Schema({
   },
 });
 
+<<<<<<< HEAD
+=======
+// não precisa do next nas versões mais novas do mongoose
+//é um middleware no Mongoose executa algo antes de alguma ação, nesse caso executa antes do save, e executa a criptografia da senha
+>>>>>>> 5acc7dc84c7caf4490c6f0a7172e699214c33ee9
 userSchema.pre("save", async function () {
 
   this.password = await bcrypt.hash(this.password, 10);
 });
 
+<<<<<<< HEAD
+=======
+// Define um método para a classe
+//no mongoose permite adicionar métodos personalizados, nesse caso, é estou criando e usando função senhaCorreta no userSchema
+>>>>>>> 5acc7dc84c7caf4490c6f0a7172e699214c33ee9
 userSchema.methods.senhaCorreta = async function (senha) {
   return await bcrypt.compare(senha, this.password);
 };
